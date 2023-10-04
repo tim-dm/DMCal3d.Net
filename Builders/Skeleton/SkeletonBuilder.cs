@@ -14,6 +14,7 @@ namespace DMCal3d.Net.Builders.Skeleton
         private const string DefaultSerializedName = "skeleton";
         private const string NumBonesAttributeName = "NUMBONES";
         private const string SceneAmbientColorAttributeName = "SCENEAMBIENTCOLOR";
+        private const string OmniBoneNameAttributeValue = "Omni01";
 
         public SkeletonBuilder(string serializedName = DefaultSerializedName) : base(serializedName)
         {
@@ -31,7 +32,18 @@ namespace DMCal3d.Net.Builders.Skeleton
             RealRoot.SetAttributeValue(SceneAmbientColorAttributeName, $"{rValue} {gValue} {bValue}");
         }
 
-        public Bone AddBone()
+        //todo: create a method that instantiates a special lighting bone 
+        public Bone CreateOmniBone(int numChilds, int id)
+        {
+            Bone omniBone = new();
+            omniBone.SetName(OmniBoneNameAttributeValue);
+            omniBone.SetId(id);
+            omniBone.SetNumChilds(numChilds);
+            RealRoot.Add(omniBone);
+            return omniBone;
+        }
+
+        public Bone CreateBone()
         {
             //temporary
             return null;
