@@ -1,7 +1,7 @@
 ﻿using DMCal3d.Net.Builders.Mesh;
 using System.Xml.Linq;
 
-namespace DMCal3d.Net.Builders.Skeleton.Bone
+namespace DMCal3d.Net.Builders.Skeleton
 {
     public class Bone
     {

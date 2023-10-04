@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DMCal3d.Net.Builders.Skeleton.Bone
+namespace DMCal3d.Net.Builders.Skeleton
 {
     public class OmniBone : Bone
     {
