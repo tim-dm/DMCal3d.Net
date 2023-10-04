@@ -5,7 +5,7 @@ namespace DMCal3d.Net.Builders.Skeleton
 {
     public class Bone
     {
-        private const string BoneElementName = "SUBMESH";
+        private const string BoneElementName = "BONE";
         private const string NameAttributeName = "NAME";
         private const string NumChildsAttributeName = "NUMCHILDS";
         private const string IdAttributeName = "ID";
@@ -78,7 +78,7 @@ namespace DMCal3d.Net.Builders.Skeleton
         private XElement CreateChild(string tagName, int value)
         {
             XElement child = new(tagName) { Value = value.ToString() };
-            Element.Add();
+            Element.Add(child);
             return child;
         }
     }
