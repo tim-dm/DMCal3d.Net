@@ -1,7 +1,7 @@
 ﻿using DMCal3d.Net.Builders.Mesh;
 using System.Xml.Linq;
 
-namespace DMCal3d.Net.Builders.Skeleton
+namespace DMCal3d.Net.Builders.Skeleton.Bone
 {
     public class Bone
     {
@@ -56,7 +56,7 @@ namespace DMCal3d.Net.Builders.Skeleton
         public Coord CreateLocalRotation()
         {
             return CreateCoord(LocalTranslationElementName);
-        }       
+        }
 
         public XElement CreateParentId(int value)
         {
