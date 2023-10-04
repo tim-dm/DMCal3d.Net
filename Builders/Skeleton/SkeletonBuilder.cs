@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DMCal3d.Net.Builders.Mesh;
 
 namespace DMCal3d.Net.Builders.Skeleton
 {
@@ -33,7 +29,7 @@ namespace DMCal3d.Net.Builders.Skeleton
         }
 
         //todo: create a method that instantiates a special lighting bone 
-        public Bone CreateOmniBone(int numChilds, int id)
+        public OmniBone CreateOmniBone(int numChilds, int id, int lightType, int lightColorR, int lightColorG, int lightColorB)
         {
             Bone omniBone = new();
             omniBone.SetName(OmniBoneNameAttributeValue);
