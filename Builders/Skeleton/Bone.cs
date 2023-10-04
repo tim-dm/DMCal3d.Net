@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using DMCal3d.Net.Builders.Mesh;
+using System.Xml.Linq;
 
 namespace DMCal3d.Net.Builders.Skeleton
 {
@@ -8,6 +9,12 @@ namespace DMCal3d.Net.Builders.Skeleton
         private const string NameAttributeName = "NAME";
         private const string NumChildsAttributeName = "NUMCHILDS";
         private const string IdAttributeName = "ID";
+        private const string TranslationElementName = "TRANSLATION";
+        private const string RotationElementName = "ROTATION";
+        private const string LocalTranslationElementName = "LOCALTRANSLATION";
+        private const string LocalRotationElementName = "LOCALROTATION";
+        private const string ParentIdElementName = "PARENTID";
+        private const string ChildIdElementName = "CHILDID";
 
         public XElement Element { get; private set; }
 
@@ -29,6 +36,50 @@ namespace DMCal3d.Net.Builders.Skeleton
         public void SetId(int value)
         {
             Element.SetAttributeValue(IdAttributeName, value);
+        }
+
+        public Coord CreateTranslation()
+        {
+            return CreateCoord(TranslationElementName);
+        }
+
+        public Coord CreateRotation()
+        {
+            return CreateCoord(TranslationElementName);
+        }
+
+        public Coord CreateLocalTranslation()
+        {
+            return CreateCoord(RotationElementName);
+        }
+
+        public Coord CreateLocalRotation()
+        {
+            return CreateCoord(LocalTranslationElementName);
+        }       
+
+        public XElement CreateParentId(int value)
+        {
+            return CreateChild(ParentIdElementName, value);
+        }
+
+        public XElement CreateChildId(int value)
+        {
+            return CreateChild(ChildIdElementName, value);
+        }
+
+        private Coord CreateCoord(string tagName)
+        {
+            Coord coord = new(LocalRotationElementName);
+            Element.Add(coord.Element);
+            return coord;
+        }
+
+        private XElement CreateChild(string tagName, int value)
+        {
+            XElement child = new(tagName) { Value = value.ToString() };
+            Element.Add();
+            return child;
         }
     }
 }
