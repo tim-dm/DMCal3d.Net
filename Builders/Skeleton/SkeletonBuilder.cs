@@ -39,7 +39,7 @@ namespace DMCal3d.Net.Builders.Skeleton
             omniBone.SetName(OmniBoneNameAttributeValue);
             omniBone.SetId(id);
             omniBone.SetNumChilds(numChilds);
-            RealRoot.Add(omniBone);
+            RealRoot.Add(omniBone.Element);
             return omniBone;
         }
 
