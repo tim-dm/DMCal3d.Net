@@ -31,7 +31,7 @@ namespace DMCal3d.Net.Builders.Skeleton
         //todo: create a method that instantiates a special lighting bone 
         public OmniBone CreateOmniBone(int numChilds, int id, int lightType, int lightColorR, int lightColorG, int lightColorB)
         {
-            Bone omniBone = new();
+            OmniBone omniBone = new();
             omniBone.SetName(OmniBoneNameAttributeValue);
             omniBone.SetId(id);
             omniBone.SetNumChilds(numChilds);
