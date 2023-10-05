@@ -28,7 +28,7 @@ namespace DMCal3d.Net.Builders.Skeleton
             RealRoot.SetAttributeValue(SceneAmbientColorAttributeName, $"{rValue} {gValue} {bValue}");
         }
 
-        public OmniBone CreateOmniBone(int lightType, int lightColorR, int lightColorG, int lightColorB)
+        public OmniBone AddOmniBone(int lightType, int lightColorR, int lightColorG, int lightColorB)
         {
             OmniBone omniBone = new();
             omniBone.SetName(OmniBoneNameAttributeValue);
@@ -38,7 +38,7 @@ namespace DMCal3d.Net.Builders.Skeleton
             return omniBone;
         }
 
-        public Bone CreateBone(string name, int numChilds, int id)
+        public Bone AddBone(string name, int numChilds, int id)
         {
             Bone bone = new(name, numChilds, id);
             RealRoot.Add(bone.Element);

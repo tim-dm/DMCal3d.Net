@@ -59,7 +59,7 @@ namespace DMCal3d.Net.Builders.Mesh
             return vertex;
         }
 
-        public Morph CreateMorph()
+        public Morph AddMorph()
         {
             Morph morph = new();
             Element.Add(morph.Element);
