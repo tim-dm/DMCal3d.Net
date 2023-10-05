@@ -26,6 +26,11 @@ namespace DMCal3d.Net.Builders
             Element.SetAttributeValue(attributeName, attributeValue);
         }
 
+        public void SetValue(object value)
+        {
+            Element.Value = value.ToString();
+        }
+
         public Node CreateChild(string name)
         {
             Node node = new(name);

@@ -51,11 +51,6 @@ namespace DMCal3d.Net.Builders.Mesh
 
         public Coord(string name) : base(name) { }
 
-        public void SetValue(string value)
-        {
-            Element.Value = value;
-        }
-
         private void SetValue()
         {
             SetValue($"{_x:0.000} {_y:0.000} {_z:0.000} {_w:0.000}");
