@@ -60,14 +60,14 @@ namespace DMCal3d.Net.Builders.Skeleton
             return CreateCoord(LocalTranslationElementName);
         }
 
-        public XElement CreateParentId(int value)
+        public Node CreateParentId(int value)
         {
-            return CreateChild(ParentIdElementName, value);
+            return CreateChild(ParentIdElementName, value.ToString());
         }
 
-        public XElement CreateChildId(int value)
+        public Node CreateChildId(int value)
         {
-            return CreateChild(ChildIdElementName, value);
+            return CreateChild(ChildIdElementName, value.ToString());
         }
 
         private Coord CreateCoord(string tagName)
@@ -75,13 +75,6 @@ namespace DMCal3d.Net.Builders.Skeleton
             Coord coord = new(LocalRotationElementName);
             Element.Add(coord.Element);
             return coord;
-        }
-
-        private XElement CreateChild(string tagName, int value)
-        {
-            XElement child = new(tagName) { Value = value.ToString() };
-            Element.Add(child);
-            return child;
         }
     }
 }
