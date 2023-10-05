@@ -69,9 +69,9 @@ namespace DMCal3d.Net.Builders.Skeleton
             return CreateChild(ChildIdElementName, value.ToString());
         }
 
-        private CoordNode CreateCoord(string tagName)
+        private CoordNode CreateCoord(string name)
         {
-            CoordNode coord = new(LocalRotationElementName);
+            CoordNode coord = new(name);
             Element.Add(coord.Element);
             return coord;
         }
