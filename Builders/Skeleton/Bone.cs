@@ -46,12 +46,12 @@ namespace DMCal3d.Net.Builders.Skeleton
 
         public CoordNode CreateRotation()
         {
-            return CreateCoord(TranslationElementName);
+            return CreateCoord(RotationElementName);
         }
 
         public CoordNode CreateLocalTranslation()
         {
-            return CreateCoord(RotationElementName);
+            return CreateCoord(LocalTranslationElementName);
         }
 
         public CoordNode CreateLocalRotation()
