@@ -13,12 +13,12 @@ namespace DMCal3d.Net.Builders.Skeleton
 
         public void SetLightType(int value)
         {
-            Element.SetAttributeValue(LightTypeAttributeName, value);
+            SetAttribute(LightTypeAttributeName, value);
         }
 
         public void SetLightColor(int lightColorR, int lightColorG, int lightColorB)
         {
-            Element.SetAttributeValue(LightColorAttributeName, $"{lightColorR} {lightColorG} {lightColorB}");
+            SetAttribute(LightColorAttributeName, $"{lightColorR} {lightColorG} {lightColorB}");
         }
     }
 }
