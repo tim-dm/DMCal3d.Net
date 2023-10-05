@@ -2,23 +2,18 @@
 
 namespace DMCal3d.Net.Builders.Animation
 {
-    public class KeyFrame
+    public class KeyFrame : Node
     {
         private const string KeyFrameElementName = "KEYFRAME";
         private const string TimeAttributeName = "TIME";
         private const string TranslationElementName = "TRANSLATION";
         private const string RotationElementName = "ROTATION";
 
-        public XElement Element { get; private set; }
-
-        public KeyFrame()
-        {
-            Element = new XElement(KeyFrameElementName, string.Empty);
-        }
+        public KeyFrame() : base(KeyFrameElementName) { }
 
         public void SetTime(object value)
         {
-            Element.SetAttributeValue(TimeAttributeName, value);
+            SetAttribute(TimeAttributeName, value);
         }
 
         public XElement AddTranslation(string value = "")
