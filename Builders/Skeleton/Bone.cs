@@ -3,7 +3,7 @@ using System.Xml.Linq;
 
 namespace DMCal3d.Net.Builders.Skeleton
 {
-    public class Bone
+    public class Bone : Node
     {
         private const string BoneElementName = "BONE";
         private const string NameAttributeName = "NAME";
@@ -16,34 +16,18 @@ namespace DMCal3d.Net.Builders.Skeleton
         private const string ParentIdElementName = "PARENTID";
         private const string ChildIdElementName = "CHILDID";
 
-        public XElement Element { get; private set; }
-
-        public Bone()
-        {
-            Element = new XElement(BoneElementName, string.Empty);
-        }
+        public Bone() : base(BoneElementName) { }
 
         public Bone(string name, int numChilds, int id) : this()
         {
-            SetName(name);
-            SetNumChilds(numChilds);
-            SetId(id);
+            SetAttribute(NameAttributeName, name);
+            SetAttribute(NumChildsAttributeName, numChilds);
+            SetAttribute(IdAttributeName, id);
         }
 
-        public void SetName(string value)
-        {
-            Element.SetAttributeValue(NameAttributeName, value);
-        }
-
-        public void SetNumChilds(int value)
-        {
-            Element.SetAttributeValue(NumChildsAttributeName, value);
-        }
-
-        public void SetId(int value)
-        {
-            Element.SetAttributeValue(IdAttributeName, value);
-        }
+        public void SetName(string value) => SetAttribute(NameAttributeName, value);
+        public void SetNumChilds(int value) => SetAttribute(NumChildsAttributeName, value);
+        public void SetId(int value) => SetAttribute(IdAttributeName, value);
 
         public Coord CreateTranslation()
         {
