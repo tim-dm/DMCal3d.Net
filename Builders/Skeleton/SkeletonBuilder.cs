@@ -39,10 +39,11 @@ namespace DMCal3d.Net.Builders.Skeleton
             return omniBone;
         }
 
-        public Bone CreateBone()
+        public Bone CreateBone(string name, int numChilds, int id)
         {
-            //temporary
-            return null;
+            Bone bone = new(name, numChilds, id);
+            RealRoot.Add(bone.Element);
+            return bone;
         }
     }
 }
