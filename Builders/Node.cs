@@ -29,14 +29,14 @@ namespace DMCal3d.Net.Builders
         public Node CreateChild(string name)
         {
             Node node = new(name);
-            Element.Add(node);
+            Element.Add(node.Element);
             return node;
         }
 
         public Node CreateChild(string name, string value)
         {
             Node node = new(name, value);
-            Element.Add(node);
+            Element.Add(node.Element);
             return node;
         }
     }
