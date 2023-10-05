@@ -51,6 +51,14 @@ namespace DMCal3d.Net.Builders
 
         public CoordNode(string name) : base(name) { }
 
+        public void SetValues(double? x, double? y, double? z, double? w = null)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+            W = w;
+        }
+
         private void SetValue()
         {
             SetValue($"{_x:0.000} {_y:0.000} {_z:0.000} {_w:0.000}");
