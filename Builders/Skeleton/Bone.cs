@@ -1,5 +1,4 @@
-﻿using DMCal3d.Net.Builders.Mesh;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
 namespace DMCal3d.Net.Builders.Skeleton
 {
@@ -40,22 +39,22 @@ namespace DMCal3d.Net.Builders.Skeleton
             SetAttribute(IdAttributeName, value);
         }
 
-        public Coord CreateTranslation()
+        public CoordNode CreateTranslation()
         {
             return CreateCoord(TranslationElementName);
         }
 
-        public Coord CreateRotation()
+        public CoordNode CreateRotation()
         {
             return CreateCoord(TranslationElementName);
         }
 
-        public Coord CreateLocalTranslation()
+        public CoordNode CreateLocalTranslation()
         {
             return CreateCoord(RotationElementName);
         }
 
-        public Coord CreateLocalRotation()
+        public CoordNode CreateLocalRotation()
         {
             return CreateCoord(LocalTranslationElementName);
         }
@@ -70,9 +69,9 @@ namespace DMCal3d.Net.Builders.Skeleton
             return CreateChild(ChildIdElementName, value.ToString());
         }
 
-        private Coord CreateCoord(string tagName)
+        private CoordNode CreateCoord(string tagName)
         {
-            Coord coord = new(LocalRotationElementName);
+            CoordNode coord = new(LocalRotationElementName);
             Element.Add(coord.Element);
             return coord;
         }

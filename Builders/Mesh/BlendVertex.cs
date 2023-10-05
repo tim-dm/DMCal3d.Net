@@ -29,16 +29,16 @@ namespace DMCal3d.Net.Builders.Mesh
             SetAttribute(PosDiffAttributeName, value);
         }
 
-        public Coord AddPosition()
+        public CoordNode AddPosition()
         {
-            Coord position = new(PositionElementName);
+            CoordNode position = new(PositionElementName);
             Element.Add(position.Element);
             return position;
         }
 
-        public Coord AddNormal()
+        public CoordNode AddNormal()
         {
-            Coord position = new(NormalElementName);
+            CoordNode position = new(NormalElementName);
             Element.Add(position.Element);
             return position;
         }

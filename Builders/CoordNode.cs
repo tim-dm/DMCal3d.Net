@@ -1,8 +1,8 @@
 ﻿using System.Xml.Linq;
 
-namespace DMCal3d.Net.Builders.Mesh
+namespace DMCal3d.Net.Builders
 {
-    public class Coord : Node
+    public class CoordNode : Node
     {
         private double? _x;
         private double? _y;
@@ -49,7 +49,7 @@ namespace DMCal3d.Net.Builders.Mesh
             }
         }
 
-        public Coord(string name) : base(name) { }
+        public CoordNode(string name) : base(name) { }
 
         private void SetValue()
         {
