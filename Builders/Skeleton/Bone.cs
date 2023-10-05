@@ -75,5 +75,13 @@ namespace DMCal3d.Net.Builders.Skeleton
             Element.Add(coord.Element);
             return coord;
         }
+
+        private CoordNode CreateCoord(string name, object value)
+        {
+            CoordNode coord = new(name);
+            coord.SetValue(value);
+            Element.Add(coord.Element);
+            return coord;
+        }
     }
 }
