@@ -58,5 +58,12 @@ namespace DMCal3d.Net.Builders.Mesh
             Element.Add(vertex.Element);
             return vertex;
         }
+
+        public Morph CreateMorph()
+        {
+            Morph morph = new();
+            Element.Add(morph.Element);
+            return morph;
+        }
     }
 }
