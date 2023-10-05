@@ -28,13 +28,19 @@ namespace DMCal3d.Net.Builders.Skeleton
             RealRoot.SetAttributeValue(SceneAmbientColorAttributeName, $"{rValue} {gValue} {bValue}");
         }
 
-        public OmniBone AddOmniBone(int lightType, int lightColorR, int lightColorG, int lightColorB)
+        public OmniBone AddOmniBone()
         {
             OmniBone omniBone = new();
             omniBone.SetName(OmniBoneNameAttributeValue);
+            RealRoot.Add(omniBone.Element);
+            return omniBone;
+        }
+
+        public OmniBone AddOmniBone(int lightType, int lightColorR, int lightColorG, int lightColorB)
+        {
+            OmniBone omniBone = AddOmniBone();
             omniBone.SetLightType(lightType);
             omniBone.SetLightColor(lightColorR, lightColorG, lightColorB);
-            RealRoot.Add(omniBone.Element);
             return omniBone;
         }
 
