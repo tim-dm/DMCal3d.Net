@@ -25,9 +25,20 @@ namespace DMCal3d.Net.Builders.Skeleton
             SetAttribute(IdAttributeName, id);
         }
 
-        public void SetName(string value) => SetAttribute(NameAttributeName, value);
-        public void SetNumChilds(int value) => SetAttribute(NumChildsAttributeName, value);
-        public void SetId(int value) => SetAttribute(IdAttributeName, value);
+        public void SetName(string value)
+        {
+            SetAttribute(NameAttributeName, value);
+        }
+
+        public void SetNumChilds(int value)
+        {
+            SetAttribute(NumChildsAttributeName, value);
+        }
+
+        public void SetId(int value)
+        {
+            SetAttribute(IdAttributeName, value);
+        }
 
         public Coord CreateTranslation()
         {
