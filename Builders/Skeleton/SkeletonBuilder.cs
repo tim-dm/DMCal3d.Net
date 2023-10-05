@@ -28,7 +28,6 @@ namespace DMCal3d.Net.Builders.Skeleton
             RealRoot.SetAttributeValue(SceneAmbientColorAttributeName, $"{rValue} {gValue} {bValue}");
         }
 
-        //todo: create a method that instantiates a special lighting bone 
         public OmniBone CreateOmniBone(int lightType, int lightColorR, int lightColorG, int lightColorB)
         {
             OmniBone omniBone = new();
