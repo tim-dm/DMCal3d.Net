@@ -2,14 +2,19 @@
 
 namespace DMCal3d.Net.Builders.Animation
 {
-    public class KeyFrame : Node
+    public class AnimationKeyFrame : Node
     {
         private const string KeyFrameElementName = "KEYFRAME";
         private const string TimeAttributeName = "TIME";
         private const string TranslationElementName = "TRANSLATION";
         private const string RotationElementName = "ROTATION";
 
-        public KeyFrame() : base(KeyFrameElementName) { }
+        public AnimationKeyFrame() : base(KeyFrameElementName) { }
+
+        public AnimationKeyFrame(string time) : this()
+        { 
+            SetTime(time);
+        }
 
         public void SetTime(object value)
         {

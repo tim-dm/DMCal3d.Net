@@ -17,9 +17,9 @@
             RealRoot.SetAttributeValue(DurationAttributeName, DefaultDurationAttributeValue);
         }
 
-        public Track AddTrack()
+        public AnimationTrack AddTrack()
         {
-            Track track = new();
+            AnimationTrack track = new();
             RealRoot.Add(track.Element);
             return track;
         }

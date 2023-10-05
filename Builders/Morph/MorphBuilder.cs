@@ -25,9 +25,9 @@
             RealRoot.SetAttributeValue(DurationAttributeName, value);
         }
 
-        public Track AddTrack()
+        public MorphTrack AddTrack()
         {
-            Track track = new();
+            MorphTrack track = new();
             RealRoot.Add(track.Element);
             return track;
         }

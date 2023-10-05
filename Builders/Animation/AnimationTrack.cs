@@ -2,13 +2,13 @@
 
 namespace DMCal3d.Net.Builders.Animation
 {
-    public class Track : Node
+    public class AnimationTrack : Node
     {
         private const string TrackElementName = "TRACK";
         private const string BoneIdAttributeName = "BONEID";
         private const string NumKeyFramesAttributeName = "NUMKEYFRAMES";
 
-        public Track() : base(TrackElementName) { }
+        public AnimationTrack() : base(TrackElementName) { }
 
         public void SetBoneId(object value)
         {
@@ -20,9 +20,9 @@ namespace DMCal3d.Net.Builders.Animation
             SetAttribute(NumKeyFramesAttributeName, value);
         }
 
-        public KeyFrame AddKeyFrame()
+        public AnimationKeyFrame AddKeyFrame()
         {
-            KeyFrame keyframe = new();
+            AnimationKeyFrame keyframe = new();
             Element.Add(keyframe.Element);
             return keyframe;
         }

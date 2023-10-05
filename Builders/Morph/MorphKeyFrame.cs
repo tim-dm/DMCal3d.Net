@@ -2,13 +2,18 @@
 
 namespace DMCal3d.Net.Builders.Morph
 {
-    public class KeyFrame : Node
+    public class MorphKeyFrame : Node
     {
         private const string KeyframeElementName = "KEYFRAME";
         private const string TimeAttributeName = "TIME";
         private const string WeightName = "WEIGHT";
 
-        public KeyFrame() : base(KeyframeElementName) {}
+        public MorphKeyFrame() : base(KeyframeElementName) {}
+
+        public MorphKeyFrame(string time) : this()
+        {
+            SetTime(time);
+        }
 
         public void SetTime(string value)
         {

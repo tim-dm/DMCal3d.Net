@@ -2,13 +2,13 @@
 
 namespace DMCal3d.Net.Builders.Morph
 {
-    public class Track : Node
+    public class MorphTrack : Node
     {
         private const string TrackElementName = "TRACK";
         private const string NumKeyframesAttributeName = "NUMKEYFRAMES";
         private const string MorphNameAttributeName = "MORPHNAME";
 
-        public Track() : base(TrackElementName) { }
+        public MorphTrack() : base(TrackElementName) { }
 
         public void SetNumKeyFrames(string value)
         {
@@ -20,9 +20,9 @@ namespace DMCal3d.Net.Builders.Morph
             SetAttribute(MorphNameAttributeName, value);
         }
 
-        public KeyFrame AddKeyFrame(string time = "")
+        public MorphKeyFrame AddKeyFrame(string time = "")
         {
-            KeyFrame keyframe = new(time);
+            MorphKeyFrame keyframe = new(time);
             Element.Add(keyframe.Element);
             return keyframe;
         }
