@@ -2,15 +2,14 @@
 
 namespace DMCal3d.Net.Builders.Mesh
 {
-    public class Coord
+    public class Coord : Node
     {
-        private double _x;
-        private double _y;
-        private double _z;
+        private double? _x;
+        private double? _y;
+        private double? _z;
+        private double? _w;
 
-        public XElement Element { get; private set; }
-
-        public double X
+        public double? X
         {
             get => _x;
             set
@@ -20,7 +19,7 @@ namespace DMCal3d.Net.Builders.Mesh
             }
         }
 
-        public double Y
+        public double? Y
         {
             get => _y;
             set
@@ -30,7 +29,7 @@ namespace DMCal3d.Net.Builders.Mesh
             }
         }
 
-        public double Z
+        public double? Z
         {
             get => _z;
             set
@@ -40,10 +39,17 @@ namespace DMCal3d.Net.Builders.Mesh
             }
         }
 
-        public Coord(string name)
+        public double? W
         {
-            Element = new XElement(name);
+            get => _w;
+            set
+            {
+                _w = value;
+                SetValue();
+            }
         }
+
+        public Coord(string name) : base(name) { }
 
         public void SetValue(string value)
         {
@@ -52,7 +58,7 @@ namespace DMCal3d.Net.Builders.Mesh
 
         private void SetValue()
         {
-            SetValue($"{_x:0.000} {_y:0.000} {_z:0.000}");
+            SetValue($"{_x:0.000} {_y:0.000} {_z:0.000} {_w:0.000}");
         }
     }
 }
