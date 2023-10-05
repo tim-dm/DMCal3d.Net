@@ -23,6 +23,13 @@ namespace DMCal3d.Net.Builders.Skeleton
             Element = new XElement(BoneElementName, string.Empty);
         }
 
+        public Bone(string name, int numChilds, int id) : this()
+        {
+            SetName(name);
+            SetNumChilds(numChilds);
+            SetId(id);
+        }
+
         public void SetName(string value)
         {
             Element.SetAttributeValue(NameAttributeName, value);
