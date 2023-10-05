@@ -15,42 +15,42 @@ namespace DMCal3d.Net.Builders.Mesh
 
         public Submesh() : base(SubmeshElementName) { }
 
-        public void SetNumVertices(int value)
+        public void SetNumVertices(string value)
         {
             SetAttribute(NumVerticesAttributeName, value);
         }
 
-        public void SetNumFaces(int value)
+        public void SetNumFaces(string value)
         {
             SetAttribute(NumFacesAttributeName, value);
         }
 
-        public void SetNumLodSteps(int value)
+        public void SetNumLodSteps(string value)
         {
             SetAttribute(NumLodStepsAttributeName, value);
         }
 
-        public void SetNumSprings(int value)
+        public void SetNumSprings(string value)
         {
             SetAttribute(NumSpringsAttributeName, value);
         }
 
-        public void SetNumMorphs(int value)
+        public void SetNumMorphs(string value)
         {
             SetAttribute(NumMorphsAttributeName, value);
         }
 
-        public void SetNumTexCoords(int value)
+        public void SetNumTexCoords(string value)
         {
             SetAttribute(NumTexCoordsAttributeName, value);
         }
 
-        public void SetMaterial(int value)
+        public void SetMaterial(string value)
         {
             SetAttribute(MaterialAttributeName, value);
         }
 
-        public Vertex AddVertex(int numinfluences = 0, int id = 0)
+        public Vertex AddVertex(string numinfluences = "0", string id = "0")
         {
             Vertex vertex = new();
             vertex.SetNumInfluences(numinfluences);

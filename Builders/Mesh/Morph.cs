@@ -11,7 +11,7 @@ namespace DMCal3d.Net.Builders.Mesh
 
         public Morph() : base(MorphElementName) { }
 
-        public Morph(string name, object blendvertCount) : this() 
+        public Morph(string name, string blendvertCount) : this() 
         {
             SetName(name);
             SetBlendVertCount(blendvertCount);
@@ -22,12 +22,12 @@ namespace DMCal3d.Net.Builders.Mesh
             SetAttribute(NameAttributeName, value);
         }
 
-        public void SetBlendVertCount(object value)
+        public void SetBlendVertCount(string value)
         {
             SetAttribute(NumBlendVertsAttributeName, value);
         }
 
-        public void SetId(object value)
+        public void SetId(string value)
         {
             SetAttribute(MorphIdAttributeName, value);
         }

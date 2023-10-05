@@ -21,14 +21,14 @@ namespace DMCal3d.Net.Builders
             Element = new XElement(name, value);
         }
 
-        public void SetAttribute(string attributeName, object attributeValue)
+        public void SetAttribute(string attributeName, string attributeValue)
         {
             Element.SetAttributeValue(attributeName, attributeValue);
         }
 
-        public void SetValue(object value)
+        public void SetValue(string value)
         {
-            Element.Value = value.ToString();
+            Element.Value = value;
         }
 
         public Node CreateChild(string name)

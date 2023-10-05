@@ -36,7 +36,7 @@ namespace DMCal3d.Net.Builders.Skeleton
             return omniBone;
         }
 
-        public OmniBone AddOmniBone(int lightType, int lightColorR, int lightColorG, int lightColorB)
+        public OmniBone AddOmniBone(string lightType, string lightColorR, string lightColorG, string lightColorB)
         {
             OmniBone omniBone = AddOmniBone();
             omniBone.SetLightType(lightType);
@@ -44,7 +44,7 @@ namespace DMCal3d.Net.Builders.Skeleton
             return omniBone;
         }
 
-        public Bone AddBone(string name, int numChilds, int id)
+        public Bone AddBone(string name, string numChilds, string id)
         {
             Bone bone = new(name, numChilds, id);
             RealRoot.Add(bone.Element);

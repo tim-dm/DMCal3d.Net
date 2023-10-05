@@ -16,7 +16,7 @@ namespace DMCal3d.Net.Builders.Animation
             SetTime(time);
         }
 
-        public void SetTime(object value)
+        public void SetTime(string value)
         {
             SetAttribute(TimeAttributeName, value);
         }

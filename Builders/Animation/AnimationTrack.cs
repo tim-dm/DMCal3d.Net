@@ -10,12 +10,12 @@ namespace DMCal3d.Net.Builders.Animation
 
         public AnimationTrack() : base(TrackElementName) { }
 
-        public void SetBoneId(object value)
+        public void SetBoneId(string value)
         {
             SetAttribute(BoneIdAttributeName, value);
         }
 
-        public void SetNumKeyFrames(object value)
+        public void SetNumKeyFrames(string value)
         {
             SetAttribute(NumKeyFramesAttributeName, value);
         }

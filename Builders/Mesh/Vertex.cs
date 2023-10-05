@@ -10,18 +10,18 @@ namespace DMCal3d.Net.Builders.Mesh
 
         public Vertex() : base(VertexElementName) { }
 
-        public Vertex(object numInfluences, object id) : this()
+        public Vertex(string numInfluences, string id) : this()
         {
             SetAttribute(NumInfluencesAttributeName, numInfluences);
             SetAttribute(IdAttributeName, id);
         }
 
-        public void SetNumInfluences(object value)
+        public void SetNumInfluences(string value)
         {
             SetAttribute(NumInfluencesAttributeName, value);
         }
 
-        public void SetId(object value)
+        public void SetId(string value)
         {
             SetAttribute(IdAttributeName, value);
         }

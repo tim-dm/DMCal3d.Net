@@ -17,7 +17,7 @@ namespace DMCal3d.Net.Builders.Skeleton
 
         public Bone() : base(BoneElementName) { }
 
-        public Bone(string name, int numChilds, int id) : this()
+        public Bone(string name, string numChilds, string id) : this()
         {
             SetAttribute(NameAttributeName, name);
             SetAttribute(NumChildsAttributeName, numChilds);
@@ -29,12 +29,12 @@ namespace DMCal3d.Net.Builders.Skeleton
             SetAttribute(NameAttributeName, value);
         }
 
-        public void SetNumChilds(int value)
+        public void SetNumChilds(string value)
         {
             SetAttribute(NumChildsAttributeName, value);
         }
 
-        public void SetId(int value)
+        public void SetId(string value)
         {
             SetAttribute(IdAttributeName, value);
         }
@@ -59,12 +59,12 @@ namespace DMCal3d.Net.Builders.Skeleton
             return CreateCoord(LocalRotationElementName);
         }
 
-        public Node CreateParentId(int value)
+        public Node CreateParentId(string value)
         {
             return CreateChild(ParentIdElementName, value.ToString());
         }
 
-        public Node CreateChildId(int value)
+        public Node CreateChildId(string value)
         {
             return CreateChild(ChildIdElementName, value.ToString());
         }
@@ -76,7 +76,7 @@ namespace DMCal3d.Net.Builders.Skeleton
             return coord;
         }
 
-        private CoordNode CreateCoord(string name, object value)
+        private CoordNode CreateCoord(string name, string value)
         {
             CoordNode coord = new(name);
             coord.SetValue(value);

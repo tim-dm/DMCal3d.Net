@@ -17,12 +17,12 @@
             RealRoot.SetAttributeValue(DurationAttributeName, DefaultDurationAttributeValue);
         }
 
-        public void SetDuration(object value)
+        public void SetDuration(string value)
         {
             RealRoot.SetAttributeValue(DurationAttributeName, value);
         }
 
-        public void SetNumTracks(object value)
+        public void SetNumTracks(string value)
         {
             RealRoot.SetAttributeValue(NumTracksAttributeName, value);
         }
