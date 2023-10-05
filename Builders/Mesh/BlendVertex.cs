@@ -2,7 +2,7 @@
 
 namespace DMCal3d.Net.Builders.Mesh
 {
-    public class BlendVertex
+    public class BlendVertex : Node
     {
         private const string BlendVertexElementName = "BLENDVERTEX";
         private const string VertexIdAttributeName = "VERTEXID";
@@ -11,12 +11,7 @@ namespace DMCal3d.Net.Builders.Mesh
         private const string NormalElementName = "NORMAL";
         private const string TexCoordElementName = "TEXCOORD";
 
-        public XElement Element { get; private set; }
-
-        public BlendVertex()
-        {
-            Element = new XElement(BlendVertexElementName, string.Empty);
-        }
+        public BlendVertex() : base(BlendVertexElementName) { }
 
         public BlendVertex(string id, string posDiff) : this()
         {
@@ -26,12 +21,12 @@ namespace DMCal3d.Net.Builders.Mesh
 
         public void SetId(string id)
         {
-            Element.SetAttributeValue(VertexIdAttributeName, id);
+            SetAttribute(VertexIdAttributeName, id);
         }
 
         public void SetposDiff(string value)
         {
-            Element.SetAttributeValue(PosDiffAttributeName, value);
+            SetAttribute(PosDiffAttributeName, value);
         }
 
         public Coord AddPosition()

@@ -2,7 +2,7 @@
 
 namespace DMCal3d.Net.Builders.Mesh
 {
-    public class Submesh
+    public class Submesh : Node
     {
         private const string SubmeshElementName = "SUBMESH";
         private const string NumVerticesAttributeName = "NUMVERTICES";
@@ -13,46 +13,41 @@ namespace DMCal3d.Net.Builders.Mesh
         private const string NumTexCoordsAttributeName = "NUMTEXCOORDS";
         private const string MaterialAttributeName = "MATERIAL";
 
-        public XElement Element { get; private set; }
-
-        public Submesh()
-        {
-            Element = new XElement(SubmeshElementName, string.Empty);
-        }
+        public Submesh() : base(SubmeshElementName) { }
 
         public void SetNumVertices(int value)
         {
-            Element.SetAttributeValue(NumVerticesAttributeName, value);
+            SetAttribute(NumVerticesAttributeName, value);
         }
 
         public void SetNumFaces(int value)
         {
-            Element.SetAttributeValue(NumFacesAttributeName, value);
+            SetAttribute(NumFacesAttributeName, value);
         }
 
         public void SetNumLodSteps(int value)
         {
-            Element.SetAttributeValue(NumLodStepsAttributeName, value);
+            SetAttribute(NumLodStepsAttributeName, value);
         }
 
         public void SetNumSprings(int value)
         {
-            Element.SetAttributeValue(NumSpringsAttributeName, value);
+            SetAttribute(NumSpringsAttributeName, value);
         }
 
         public void SetNumMorphs(int value)
         {
-            Element.SetAttributeValue(NumMorphsAttributeName, value);
+            SetAttribute(NumMorphsAttributeName, value);
         }
 
         public void SetNumTexCoords(int value)
         {
-            Element.SetAttributeValue(NumTexCoordsAttributeName, value);
+            SetAttribute(NumTexCoordsAttributeName, value);
         }
 
         public void SetMaterial(int value)
         {
-            Element.SetAttributeValue(MaterialAttributeName, value);
+            SetAttribute(MaterialAttributeName, value);
         }
 
         public Vertex AddVertex(int numinfluences = 0, int id = 0)

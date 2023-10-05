@@ -2,33 +2,28 @@
 
 namespace DMCal3d.Net.Builders.Mesh
 {
-    public class Morph
+    public class Morph : Node
     {
         private const string MorphElementName = "MORPH";
         private const string NameAttributeName = "NAME";
         private const string NumBlendVertsAttributeName = "NUMBLENDVERTS";
         private const string MorphIdAttributeName = "MORPHID";
 
-        public XElement Element { get; private set; }
-
-        public Morph()
-        {
-            Element = new XElement(MorphElementName, string.Empty);
-        }
+        public Morph() : base(MorphElementName) { }
 
         public void SetName(string value)
         {
-            Element.SetAttributeValue(NameAttributeName, value);
+            SetAttribute(NameAttributeName, value);
         }
 
         public void SetBlendVertCount(string value)
         {
-            Element.SetAttributeValue(NumBlendVertsAttributeName, value);
+            SetAttribute(NumBlendVertsAttributeName, value);
         }
 
         public void SetId(string value)
         {
-            Element.SetAttributeValue(MorphIdAttributeName, value);
+            SetAttribute(MorphIdAttributeName, value);
         }
 
         public BlendVertex AddBlendVertex(string id = "", string posDiff = "")

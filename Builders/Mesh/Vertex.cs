@@ -2,27 +2,28 @@
 
 namespace DMCal3d.Net.Builders.Mesh
 {
-    public class Vertex
+    public class Vertex : Node
     {
         private const string VertexElementName = "VERTEX";
         private const string NumInfluencesAttributeName = "NUMINFLUENCES";
         private const string IdAttributeName = "ID";
 
-        public XElement Element { get; private set; }
+        public Vertex() : base(VertexElementName) { }
 
-        public Vertex()
+        public Vertex(object numInfluences, object id) : this()
         {
-            Element = new XElement(VertexElementName, string.Empty);
+            SetAttribute(NumInfluencesAttributeName, numInfluences);
+            SetAttribute(IdAttributeName, id);
         }
 
-        public void SetNumInfluences(int value)
+        public void SetNumInfluences(object value)
         {
-            Element.SetAttributeValue(NumInfluencesAttributeName, value);
+            SetAttribute(NumInfluencesAttributeName, value);
         }
 
-        public void SetId(int value)
+        public void SetId(object value)
         {
-            Element.SetAttributeValue(IdAttributeName, value);
+            SetAttribute(IdAttributeName, value);
         }
     }
 }
