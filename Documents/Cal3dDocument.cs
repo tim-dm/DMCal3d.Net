@@ -12,7 +12,10 @@ namespace DMCal3d.Net.Documents
 {
     public class Cal3dDocument : ICal3dDocument
     {
-        public FileInfo AssetInfo { get; set; }
+        /// <summary>
+        /// The name of the document being parsed
+        /// </summary>
+        public string Name { get; set; }
 
         /// <summary>
         /// The xml document of the file
@@ -23,11 +26,12 @@ namespace DMCal3d.Net.Documents
         /// The casing of the elements in the document
         /// </summary>
         public DocumentCasing DocumentCasing { get; set; } = DocumentCasing.Unknown;
+        public DocumentCasing Casing { get; set; } = DocumentCasing.Unknown;
 
-        public Cal3dDocument(string cal3dAssetPath)
+        public Cal3dDocument(string cal3dxml, string name = "")
         {
-            AssetInfo = new(cal3dAssetPath);
-            TryParse(File.ReadAllText(AssetInfo.FullName));
+            Name = name;
+            TryParse(cal3dxml);
             SetDocumentCasing();
         }
 
@@ -53,14 +57,14 @@ namespace DMCal3d.Net.Documents
                     }
                     catch (XmlException)
                     {
-                        throw new MalformedAssetException(AssetInfo.Name);
+                        throw new MalformedAssetException(Name);
                     }
                 }
             }
 
             if (Document == null)
             {
-                throw new DocumentNullException(AssetInfo.Name);
+                throw new DocumentNullException(Name);
             }          
         }
         
@@ -92,7 +96,7 @@ namespace DMCal3d.Net.Documents
             if(!string.IsNullOrEmpty(templateName))
             {
                 if (templateName == "TEMPLATE")
-                    DocumentCasing = DocumentCasing.Uppercase;
+                    Casing = DocumentCasing.Uppercase;
 
                 if (templateName == "template")
                     DocumentCasing = DocumentCasing.Lowercase;
