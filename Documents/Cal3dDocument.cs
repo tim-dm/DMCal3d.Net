@@ -69,7 +69,8 @@ namespace DMCal3d.Net.Documents
         /// </summary>
         public void SetDocumentCasing()
         {
-            XElement sourceNode = Document.Descendants().FirstOrDefault(x => x.Name.LocalName.IndexOf("header", StringComparison.InvariantCultureIgnoreCase) != -1);
+            XElement? sourceNode = Document.Descendants()
+                .FirstOrDefault(x => x.Name.LocalName.IndexOf("header", StringComparison.InvariantCultureIgnoreCase) != -1);
 
             if (sourceNode != null)
             {
@@ -87,7 +88,8 @@ namespace DMCal3d.Net.Documents
                 return;
             }
 
-            string templateName = Document.Descendants().FirstOrDefault(x => x.Name.LocalName.IndexOf("template", StringComparison.InvariantCultureIgnoreCase) != -1).Name.LocalName;
+            string? templateName = Document.Descendants()?
+                .FirstOrDefault(x => x.Name.LocalName.IndexOf("template", StringComparison.InvariantCultureIgnoreCase) != -1)?.Name.LocalName;
 
             if(!string.IsNullOrEmpty(templateName))
             {
