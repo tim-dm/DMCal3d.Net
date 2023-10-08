@@ -18,6 +18,6 @@ namespace DMCal3d.Net.Documents
         /// <summary>
         /// The casing of the elements in the document
         /// </summary>
-        public DocumentCasing DocumentCasing { get; set; }
+        public DocumentCasing Casing { get; set; }
     }
 }

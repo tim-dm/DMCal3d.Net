@@ -22,10 +22,6 @@ namespace DMCal3d.Net.Documents
         /// </summary>
         public XDocument Document { get; set; }
 
-        // <summary>
-        /// The casing of the elements in the document
-        /// </summary>
-        public DocumentCasing DocumentCasing { get; set; } = DocumentCasing.Unknown;
         public DocumentCasing Casing { get; set; } = DocumentCasing.Unknown;
 
         public Cal3dDocument(string cal3dxml, string name = "")
@@ -80,13 +76,13 @@ namespace DMCal3d.Net.Documents
                 string headerName = sourceNode.Name.LocalName;
 
                 if (headerName == "HEADER")
-                    DocumentCasing = DocumentCasing.Uppercase;
+                    Casing = DocumentCasing.Uppercase;
 
                 if (headerName == "header")
-                    DocumentCasing = DocumentCasing.Lowercase;
+                    Casing = DocumentCasing.Lowercase;
 
                 if (headerName == "Header")
-                    DocumentCasing = DocumentCasing.Capitalized;
+                    Casing = DocumentCasing.Capitalized;
 
                 return;
             }
@@ -99,11 +95,13 @@ namespace DMCal3d.Net.Documents
                     Casing = DocumentCasing.Uppercase;
 
                 if (templateName == "template")
-                    DocumentCasing = DocumentCasing.Lowercase;
+                    Casing = DocumentCasing.Lowercase;
 
                 if (templateName == "Template")
-                    DocumentCasing = DocumentCasing.Capitalized;
-            }            
+                    Casing = DocumentCasing.Capitalized;
+            }
+            
+            //todo throw exception
         }
 
         /// <summary>
