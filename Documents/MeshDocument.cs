@@ -10,7 +10,7 @@ namespace DMCal3d.Net.Documents
 {
     public class MeshDocument : Cal3dDocument
     {
-        public MeshDocument(string cal3dAssetPath) : base(cal3dAssetPath)
+        public MeshDocument(string cal3dAssetPath, string name = "mesh.xmf") : base(cal3dAssetPath, name)
         {
         }
 

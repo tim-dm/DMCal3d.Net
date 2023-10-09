@@ -11,7 +11,7 @@ namespace DMCal3d.Net.Documents
     {
         private const string MeshIndexTagName = "Index";
 
-        public IndexDocument(string cal3dAssetPath) : base(cal3dAssetPath)
+        public IndexDocument(string cal3dAssetPath, string name = "index.xml") : base(cal3dAssetPath, name)
         {
 
         }

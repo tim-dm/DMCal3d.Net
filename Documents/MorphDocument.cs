@@ -9,7 +9,7 @@ namespace DMCal3d.Net.Documents
 {
     public class MorphDocument : Cal3dDocument
     {
-        public MorphDocument(string cal3dAssetPath) : base(cal3dAssetPath)
+        public MorphDocument(string cal3dAssetPath, string name = "morph.xpf") : base(cal3dAssetPath, name)
         {
         }
 

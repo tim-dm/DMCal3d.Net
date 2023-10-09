@@ -11,7 +11,7 @@ namespace DMCal3d.Net.Documents
     {
         public readonly List<string> PoseBoneTypes = new() { "handle", "catcher", "pitcher", "seat", "standing", "sitting" };
 
-        public SkeletonDocument(string cal3dAssetPath) : base(cal3dAssetPath)
+        public SkeletonDocument(string cal3dAssetPath, string name = "skeleton.xsf") : base(cal3dAssetPath, name)
         {
         }
 

@@ -9,7 +9,7 @@ namespace DMCal3d.Net.Documents
 {
     public class MaterialDocument : Cal3dDocument
     {
-        public MaterialDocument(string cal3dAssetPath) : base(cal3dAssetPath)
+        public MaterialDocument(string cal3dAssetPath, string name = "material.xrf") : base(cal3dAssetPath, name)
         {
         }
 
