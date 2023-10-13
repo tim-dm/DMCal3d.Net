@@ -38,6 +38,17 @@ namespace DMCal3d.Net.Documents
             return assets;
         }
 
+        public List<string>? GetAssetValues(bool includeDuplicates = false)
+        {
+            List<XElement>? assets = GetAssets(includeDuplicates);
+
+            List<string> values = assets
+                .Where(x => !string.IsNullOrEmpty(x.Value))
+                .Select(x => x.Value).ToList();
+
+            return values;
+        }
+
         public List<XElement>? GetAllAssets(bool includeDuplicates = false)
         {
             IEnumerable<XElement> collection1 = GetElements("Asset");
@@ -52,17 +63,15 @@ namespace DMCal3d.Net.Documents
             return buffer;
         }
 
-        public List<string> GetAllAssetsAsStrings(bool includeDuplicates = false)
+        public List<string> GetAllAssetValues(bool includeDuplicates = false)
         {
-            IEnumerable<XElement> collection1 = GetElements("Asset");
-            IEnumerable<XElement> collection2 = GetElements("AssetName");
+            List<XElement>? assets = GetAllAssets(includeDuplicates);
 
-            List<string> values = collection1
-                .Concat(collection2)
+            List<string> values = assets
                 .Where(x => !string.IsNullOrEmpty(x.Value))
                 .Select(x => x.Value).ToList();
 
-            return includeDuplicates ? values : new HashSet<string>(values).ToList();
+            return values;
         }
 
         public List<XElement>? GetActions()
