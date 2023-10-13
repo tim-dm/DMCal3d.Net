@@ -26,6 +26,18 @@ namespace DMCal3d.Net.Documents
             return Document.Element("Template")?.GetChildren("mesh[0-9]+");
         }
 
+        public List<XElement>? GetAssets(bool includeDuplicates = false)
+        {
+            List<XElement> assets = GetElements("Asset");
+
+            if (!includeDuplicates)
+            {
+                return assets.GroupBy(x => x.Value).Select(s => s.First()).ToList();
+            }
+
+            return assets;
+        }
+
         public List<XElement>? GetAllAssets(bool includeDuplicates = false)
         {
             IEnumerable<XElement> collection1 = GetElements("Asset");
