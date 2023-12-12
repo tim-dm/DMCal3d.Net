@@ -16,9 +16,14 @@ namespace DMCal3d.Net.Documents
 
         }
 
+        public List<XElement>? GetBodyParts()
+        {
+            return Document.Element("Template")?.GetChildren("bodypart[0-9]+");
+        }
+
         public List<XElement>? GetBodyPartIds()
         {
-            return Document.Element("Template")?.GetChildren("bodypartid[0-9]+");
+            return Document.Element("Template")?.GetChildren("bodypartid", true);
         }
 
         public List<XElement>? GetMeshes()

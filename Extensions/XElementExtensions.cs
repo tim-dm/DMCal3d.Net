@@ -15,7 +15,8 @@ namespace DMCal3d.Net
         private static readonly List<string> _overflowValues = new()
         {
             "10000000000 10000000000 10000000000",
-            "1E+10 1E+10 1E+10"
+            "1E+10 1E+10 1E+10",
+            "10000000000"
         };
         private static readonly Random _rnd = new();
 
@@ -140,12 +141,12 @@ namespace DMCal3d.Net
         }
 
         /// <summary>
-        /// Grabs a number from the tag name e.g. <Tag0></Tag0>
+        /// Grabs an id from the tag name e.g. 0 from <Tag0></Tag0>
         /// </summary>
-        /// <param name="element">The XElement to get the number from</param>
+        /// <param name="element">The XElement to get the id from</param>
         /// <param name="tagName">The part of the tag name to ignore</param>
         /// <returns></returns>
-        public static int GetTagNumber(this XElement element, string tagName)
+        public static int GetTagId(this XElement element, string tagName)
         {
             string tagNumberAsString = element.Name.LocalName
                 .ToLower()
@@ -156,13 +157,43 @@ namespace DMCal3d.Net
             return tagNumber;
         }
 
-        public static int GetMinMaxTagId(this List<XElement> elements, string tagName, bool min = true)
+        /// <summary>
+        /// Grabs the ids from the tag name of a list of elements
+        /// </summary>
+        /// <param name="elements">The XElements to get the ids from</param>
+        /// <param name="tagName">The part of the tag name to ignore</param>
+        /// <param name="keepOrder">If true, the resulting list will be reversed so the ids are in their original order</param>
+        /// <returns></returns>
+        public static List<int> GetTagIds(this List<XElement> elements, string tagName, bool keepOrder = true)
+        {
+            List<int> tagIds = new();
+
+            //We iterate the tags in reverse order becase we cannot assume the first tag will start at zero
+            for (int i = elements.Count - 1; i >= 0; i--)
+            {
+                string name = elements[i].Name.LocalName.ToString().ToLower();
+                //We set the id to -1 instead of 0 because an element can have an id of 0
+                int id = int.TryParse(name.Replace(tagName, ""), out id) ? id : -1;
+                tagIds.Add(id);
+            }
+
+            //The tag order is important, since we're iterating the action ids in reverse order we need
+            //to reverse the list so they are back in their original order.
+            if (keepOrder)
+            {
+                tagIds.Reverse();
+            }
+
+            return tagIds;
+        }
+
+        public static int GetMinMaxTagId(this List<XElement> elements, string tagName, bool returnMin = true)
         {
             List<int> tagIds = new();
 
             foreach (XElement element in elements)
             {
-                int tagNumber = GetTagNumber(element, tagName);
+                int tagNumber = GetTagId(element, tagName);
 
                 if (tagNumber == -1)
                 {
@@ -179,7 +210,7 @@ namespace DMCal3d.Net
 
             tagIds.Sort();
 
-            return min ? tagIds.First() : tagIds.Last();
+            return returnMin ? tagIds.First() : tagIds.Last();
         }
 
         /// <summary>
