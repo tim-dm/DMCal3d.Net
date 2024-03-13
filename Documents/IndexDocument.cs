@@ -141,5 +141,15 @@ namespace DMCal3d.Net.Documents
                 .Replace("product://", "")
                 .Replace("/index.xml", "");
         }
+
+        public void SetParent(string pid)
+        {
+            XElement dataImport = GetDataImport();
+
+            if(dataImport != null)
+            {
+                dataImport.Value = $"product://{pid}/index.xml";
+            }
+        }
     }
 }
