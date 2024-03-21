@@ -27,7 +27,7 @@ namespace DMCal3d.Net.Utils
         }
 
         /// <summary>
-        /// 
+        /// Creates a new ZipArchiveEntry and writes a string to it
         /// </summary>
         /// <param name="archive"></param>
         /// <param name="entryName"></param>
