@@ -1,6 +1,4 @@
-﻿using DMCal3d.Net.Builders.Mesh;
-
-namespace DMCal3d.Net.Builders.Skeleton
+﻿namespace DMCal3d.Net.Builders.Skeleton
 {
     public class SkeletonBuilder : BaseAssetBuilder
     {

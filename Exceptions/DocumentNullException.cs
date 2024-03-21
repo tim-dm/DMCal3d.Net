@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DMCal3d.Net.Exceptions
+﻿namespace DMCal3d.Net.Exceptions
 {
     public class DocumentNullException : Exception
     {

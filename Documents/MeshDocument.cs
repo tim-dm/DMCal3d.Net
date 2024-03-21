@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using DMCal3d.Net.Enums;
+﻿using System.Xml.Linq;
 
 namespace DMCal3d.Net.Documents
 {

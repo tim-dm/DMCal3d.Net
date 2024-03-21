@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace DMCal3d.Net.Builders
+﻿namespace DMCal3d.Net.Builders
 {
     public class CoordNode : Node
     {

@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace DMCal3d.Net.Builders.Mesh
+﻿namespace DMCal3d.Net.Builders.Mesh
 {
     public class Submesh : Node
     {

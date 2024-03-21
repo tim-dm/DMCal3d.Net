@@ -1,10 +1,5 @@
 ﻿using DMCal3d.Net.Enums;
 using DMCal3d.Net.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 

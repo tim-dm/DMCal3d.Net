@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace DMCal3d.Net.Builders.Animation
+﻿namespace DMCal3d.Net.Builders.Animation
 {
     public class AnimationTrack : Node
     {

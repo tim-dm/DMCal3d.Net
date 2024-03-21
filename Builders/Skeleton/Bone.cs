@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace DMCal3d.Net.Builders.Skeleton
+﻿namespace DMCal3d.Net.Builders.Skeleton
 {
     public class Bone : Node
     {
