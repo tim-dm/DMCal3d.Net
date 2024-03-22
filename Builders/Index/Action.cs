@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DMCal3d.Net.Builders.Index
 {
@@ -22,6 +23,13 @@ namespace DMCal3d.Net.Builders.Index
         public void SetId(string id)
         {
             Element.Name = $"Action{id}";
+        }
+
+        public void SetName(string name)
+        {
+            XElement nameElement = Element.GetChild("name", true) ?? new("Name");
+            nameElement.Value = name;
+            Element.Add(nameElement);
         }
     }
 }
