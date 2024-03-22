@@ -86,6 +86,11 @@ namespace DMCal3d.Net.Documents
             return GetMeshes().GetMinMaxTagId("mesh", false);
         }
 
+        public int GetLargestActionId()
+        {
+            return GetActions().GetMinMaxTagId("action", false);
+        }
+
         public string? GetLargestMeshIndex()
         {
             List<XElement>? meshes = GetMeshes();
