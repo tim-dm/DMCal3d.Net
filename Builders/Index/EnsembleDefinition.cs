@@ -20,7 +20,7 @@ namespace DMCal3d.Net.Builders.Index
         public SkeletalAnimationEffect AddSkeletalAnimationEffect()
         {
             SkeletalAnimationEffect effect = new();
-            Element.Add(effect);
+            Element.Add(effect.Element);
             return effect;
         }
     }

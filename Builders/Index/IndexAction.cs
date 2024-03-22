@@ -37,7 +37,7 @@ namespace DMCal3d.Net.Builders.Index
         public Definition AddDefinition()
         {
             Definition definition = new();
-            Element.Add(definition);
+            Element.Add(definition.Element);
             return definition;
         }
     }

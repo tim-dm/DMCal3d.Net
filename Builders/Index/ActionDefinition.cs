@@ -38,7 +38,7 @@ namespace DMCal3d.Net.Builders.Index
         {
             EnsembleDefinition ensembleDefinition;
             ensembleDefinition = string.IsNullOrEmpty(id) ? new() : new(id);            
-            Element.Add(ensembleDefinition);
+            Element.Add(ensembleDefinition.Element);
             return ensembleDefinition;
         }
     }

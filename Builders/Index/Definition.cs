@@ -17,7 +17,7 @@ namespace DMCal3d.Net.Builders.Index
         public ActionDefinition AddActionDefinition()
         {
             ActionDefinition actionDefinition = new();
-            Element.Add(actionDefinition);
+            Element.Add(actionDefinition.Element);
             return actionDefinition;
         }
 
