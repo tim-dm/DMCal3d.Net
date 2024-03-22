@@ -33,5 +33,13 @@ namespace DMCal3d.Net.Builders.Index
             };
             RealRoot.Add(dataImport);
         }
+
+        public IndexAction AddAction(string id = "")
+        {
+            IndexAction action;
+            action = string.IsNullOrEmpty(id) ? new() : new(id);
+            RealRoot.Add(action);
+            return action;
+        }
     }
 }
