@@ -20,5 +20,12 @@ namespace DMCal3d.Net.Builders.Index
             };
             Element.Add(assetNameElement);
         }
+
+        public EffectControls AddEffectControls()
+        {
+            EffectControls effectControls = new();
+            Element.Add(effectControls);
+            return effectControls;
+        }
     }
 }
