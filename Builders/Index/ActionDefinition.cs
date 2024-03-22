@@ -16,14 +16,14 @@ namespace DMCal3d.Net.Builders.Index
 
         public ActionDefinition() : base(ActionDefinitionElementName) { }
 
-        public XElement AddActionAttributes(string ensemblePickingCycle, string terminationIterations)
+        public XElement AddActionAttributes(string ensemblePicking, string terminationIterations)
         {
             XElement actionAttributes = new(ActionAttributesElementName);
             Element.Add(actionAttributes);
 
             actionAttributes.Add(new XElement(ActionEnsemblePickingElementName)
             {
-                Value = ensemblePickingCycle
+                Value = ensemblePicking
             });
 
             actionAttributes.Add(new XElement(ActionTerminationIterationsElementName)
@@ -36,7 +36,8 @@ namespace DMCal3d.Net.Builders.Index
 
         public EnsembleDefinition AddEnsembleDefinition(string id = "")
         {
-            EnsembleDefinition ensembleDefinition = new($"EnsembleDefinition{id}");
+            EnsembleDefinition ensembleDefinition;
+            ensembleDefinition = string.IsNullOrEmpty(id) ? new() : new(id);            
             Element.Add(ensembleDefinition);
             return ensembleDefinition;
         }
