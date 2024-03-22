@@ -33,5 +33,12 @@ namespace DMCal3d.Net.Builders.Index
             nameElement.Value = name;
             Element.Add(nameElement);
         }
+
+        public Definition AddDefinition()
+        {
+            Definition definition = new();
+            Element.Add(definition);
+            return definition;
+        }
     }
 }
