@@ -33,17 +33,5 @@ namespace DMCal3d.Net.Builders.Index
             };
             RealRoot.Add(dataImport);
         }
-
-        public void AddAction(int id)
-        {
-            AddAction(id.ToString());
-        }
-
-        public Action AddAction(string id)
-        {
-            Action action = new(id);
-            RealRoot.Add(action);
-            return action;
-        }        
     }
 }
