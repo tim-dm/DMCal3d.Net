@@ -7,15 +7,15 @@ using System.Xml.Linq;
 
 namespace DMCal3d.Net.Builders.Index
 {
-    public class Action : Node
+    public class IndexAction : Node
     {
         private const string DefaultActionElementName = "Action0";
 
-        public Action() : base(DefaultActionElementName) { }
+        public IndexAction() : base(DefaultActionElementName) { }
 
-        public Action(string actionId) : base($"Action{actionId}") { }
+        public IndexAction(string actionId) : base($"Action{actionId}") { }
 
-        public Action(int actionId) : base($"Action{actionId}") { }
+        public IndexAction(int actionId) : base($"Action{actionId}") { }
 
         public void SetId(int id)
         {
