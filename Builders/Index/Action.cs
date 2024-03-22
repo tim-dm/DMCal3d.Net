@@ -14,7 +14,9 @@ namespace DMCal3d.Net.Builders.Index
         public Action() : base(DefaultActionElementName) { }
 
         public Action(string actionId) : base($"Action{actionId}") { }
-        
+
+        public Action(int actionId) : base($"Action{actionId}") { }
+
         public void SetId(int id)
         {
             SetId(id.ToString());
