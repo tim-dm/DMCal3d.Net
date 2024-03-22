@@ -24,7 +24,7 @@ namespace DMCal3d.Net.Builders.Animation
         public XElement AddTranslation(string value = "")
         {
             XElement translation = new(TranslationElementName, value);
-            Element.Add(translation);
+            AddTranslation(translation);
             return translation;
         }
 
@@ -36,7 +36,7 @@ namespace DMCal3d.Net.Builders.Animation
         public XElement AddRotation(string value = "")
         {
             XElement rotation = new(RotationElementName, value);
-            Element.Add(rotation);
+            AddRotation(rotation);
             return rotation;
         }
 
