@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace DMCal3d.Net.Builders.Index
 {
-    internal class Action : Node
+    public class Action : Node
     {
         private const string DefaultActionElementName = "Action0";
 
