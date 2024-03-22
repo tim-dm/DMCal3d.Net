@@ -18,10 +18,7 @@ namespace DMCal3d.Net.Builders.Index
 
         public XElement AddEffectCompositionFunction(EffectCompositionFunctions compositionFunction)
         {
-            XElement effectCompositionFunction = new("EffectCompositionFunction")
-            {
-                Value = compositionFunction.ToString()
-            };
+            XElement effectCompositionFunction = new("EffectCompositionFunction") { Value = compositionFunction.ToString() };
             Element.Add(effectCompositionFunction);
             return effectCompositionFunction;
         }
