@@ -22,7 +22,7 @@ namespace DMCal3d.Net.Builders.Index
             Element.Name = $"Action{id}";
         }
 
-        public void SetName(string name)
+        public void AddName(string name)
         {
             XElement nameElement = Element.GetChild("name", true) ?? new("Name");
             nameElement.Value = name;
