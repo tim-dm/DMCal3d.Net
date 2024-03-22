@@ -8,9 +8,9 @@ namespace DMCal3d.Net.Builders.Index
 {
     internal class Action : Node
     {
-        private const string ActionElementName = "Action";
+        private const string DefaultActionElementName = "Action0";
 
-        public Action() : base(ActionElementName) { }
+        public Action() : base(DefaultActionElementName) { }
 
         public Action(string actionId) : base($"Action{actionId}") { }
         
