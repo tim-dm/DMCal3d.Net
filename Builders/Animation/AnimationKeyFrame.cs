@@ -28,9 +28,10 @@ namespace DMCal3d.Net.Builders.Animation
             return translation;
         }
 
-        public void AddTranslation(XElement translation)
+        public AnimationKeyFrame AddTranslation(XElement translation)
         {
             Element.Add(translation);
+            return this;
         }
 
         public XElement AddRotation(string value = "")
@@ -40,9 +41,10 @@ namespace DMCal3d.Net.Builders.Animation
             return rotation;
         }
 
-        public void AddRotation(XElement rotation)
+        public AnimationKeyFrame AddRotation(XElement rotation)
         {
             Element.Add(rotation);
+            return this;
         }
     }
 }
