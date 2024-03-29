@@ -17,7 +17,7 @@ namespace DMCal3d.Net.Builders.Index
             Element.Name = $"EnsembleDefinition{id}";
         }
 
-        public SkeletalAnimationEffect AddSkeletalAnimationEffect()
+        public SkeletalAnimationEffect CreateSkeletalAnimationEffect()
         {
             SkeletalAnimationEffect effect = new();
             Element.Add(effect.Element);
