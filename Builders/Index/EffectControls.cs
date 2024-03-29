@@ -14,25 +14,30 @@ namespace DMCal3d.Net.Builders.Index
 
     public class EffectControls : Node
     {
-        public EffectControls() : base("EffectControls") { }
+        public const string TagName = "EffectControls";
+        public const string EffectCompositionFunctionTagName = "EffectCompositionFunction";
+        public const string LoopIterationsTagName = "LoopIterations";
+        public const string PlaybackSpeedScaleTagName = "PlaybackSpeedScale";
+
+        public EffectControls() : base(TagName) { }
 
         public XElement CreateEffectCompositionFunction(EffectCompositionFunctions compositionFunction)
         {
-            XElement effectCompositionFunction = new("EffectCompositionFunction") { Value = compositionFunction.ToString() };
+            XElement effectCompositionFunction = new(EffectCompositionFunctionTagName) { Value = compositionFunction.ToString() };
             Element.Add(effectCompositionFunction);
             return effectCompositionFunction;
         }
 
         public XElement CreateLoopIterations(string num)
         {
-            XElement loopIterationsElement = new("LoopIterations") { Value = num };
+            XElement loopIterationsElement = new(LoopIterationsTagName) { Value = num };
             Element.Add(loopIterationsElement);
             return loopIterationsElement;
         }
 
         public XElement CreatePlaybackSpeedScale(string num)
         {
-            XElement playbackSpeedScaleElement = new("PlaybackSpeedScale") { Value = num };
+            XElement playbackSpeedScaleElement = new(PlaybackSpeedScaleTagName) { Value = num };
             Element.Add(playbackSpeedScaleElement);
             return playbackSpeedScaleElement;
         }
