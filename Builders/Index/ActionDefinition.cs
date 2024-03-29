@@ -41,5 +41,10 @@ namespace DMCal3d.Net.Builders.Index
             Element.Add(ensembleDefinition.Element);
             return ensembleDefinition;
         }
+
+        public void AddEnsembleDefinition(EnsembleDefinition ensembleDefinition)
+        {
+            Element.Add(ensembleDefinition.Element);
+        }
     }
 }
