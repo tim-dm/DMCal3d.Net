@@ -32,7 +32,7 @@ namespace DMCal3d.Net.Builders.Index
 
         public XElement AddPlaybackSpeedScale(string num)
         {
-            XElement playbackSpeedScaleElement = new("PlaybackScale") { Value = num };
+            XElement playbackSpeedScaleElement = new("PlaybackSpeedScale") { Value = num };
             Element.Add(playbackSpeedScaleElement);
             return playbackSpeedScaleElement;
         }
