@@ -8,13 +8,15 @@ namespace DMCal3d.Net.Builders.Index
 {
     public class EnsembleDefinition : Node
     {
-        public EnsembleDefinition(string id) : base($"EnsembleDefinition{id}") { }
+        public const string TagName = "EnsembleDefinition";
 
-        public EnsembleDefinition() : base($"EnsembleDefinition0") { }
+        public EnsembleDefinition(string id) : base($"{TagName}{id}") { }
+
+        public EnsembleDefinition() : base($"{TagName}0") { }
 
         public void SetId(string id)
         {
-            Element.Name = $"EnsembleDefinition{id}";
+            Element.Name = $"{TagName}{id}";
         }
 
         public SkeletalAnimationEffect CreateSkeletalAnimationEffect()
