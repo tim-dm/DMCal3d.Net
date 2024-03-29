@@ -10,9 +10,10 @@ namespace DMCal3d.Net.Builders.Index
     public class SkeletalAnimationEffect : Node
     {
         public SkeletalAnimationEffect(string id) : base($"SkeletalAnimationEffect{id}") { }
+        
         public SkeletalAnimationEffect() : base($"SkeletalAnimationEffect0") { }
 
-        public void SetAssetName(string assetName)
+        public void CreateAssetName(string assetName)
         {
             XElement assetNameElement = new("AssetName")
             {
@@ -21,7 +22,7 @@ namespace DMCal3d.Net.Builders.Index
             Element.Add(assetNameElement);
         }
 
-        public EffectControls AddEffectControls()
+        public EffectControls CreateEffectControls()
         {
             EffectControls effectControls = new();
             Element.Add(effectControls.Element);
