@@ -16,21 +16,21 @@ namespace DMCal3d.Net.Builders.Index
     {
         public EffectControls() : base("EffectControls") { }
 
-        public XElement AddEffectCompositionFunction(EffectCompositionFunctions compositionFunction)
+        public XElement CreateEffectCompositionFunction(EffectCompositionFunctions compositionFunction)
         {
             XElement effectCompositionFunction = new("EffectCompositionFunction") { Value = compositionFunction.ToString() };
             Element.Add(effectCompositionFunction);
             return effectCompositionFunction;
         }
 
-        public XElement AddLoopIterations(string num)
+        public XElement CreateLoopIterations(string num)
         {
             XElement loopIterationsElement = new("LoopIterations") { Value = num };
             Element.Add(loopIterationsElement);
             return loopIterationsElement;
         }
 
-        public XElement AddPlaybackSpeedScale(string num)
+        public XElement CreatePlaybackSpeedScale(string num)
         {
             XElement playbackSpeedScaleElement = new("PlaybackSpeedScale") { Value = num };
             Element.Add(playbackSpeedScaleElement);
