@@ -11,10 +11,10 @@ namespace DMCal3d.Net.Builders.Index
         public IndexBuilder(string serializedName = DefaultSerializedName) : base(serializedName)
         {
             AddHeader();
-            AddRealRoot(RootName);            
+            CreateRealRoot(RootName);            
         }
 
-        public override void AddRealRoot(string rootName)
+        public override void CreateRealRoot(string rootName)
         {
             RealRoot = new(rootName);
             FakeRoot.Add(RealRoot);

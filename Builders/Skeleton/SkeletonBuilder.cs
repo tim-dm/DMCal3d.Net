@@ -12,8 +12,8 @@
 
         public SkeletonBuilder(string serializedName = DefaultSerializedName) : base(serializedName)
         {
-            AddHeader(HeaderMagic, HeaderVersion);
-            AddRealRoot(RootName);
+            CreateHeader(HeaderMagic, HeaderVersion);
+            CreateRealRoot(RootName);
         }
 
         public void SetNumBones(int value)
@@ -26,7 +26,7 @@
             RealRoot.SetAttributeValue(SceneAmbientColorAttributeName, $"{rValue} {gValue} {bValue}");
         }
 
-        public OmniBone AddOmniBone()
+        public OmniBone CreateOmniBone()
         {
             OmniBone omniBone = new();
             omniBone.SetName(OmniBoneNameAttributeValue);
@@ -34,15 +34,15 @@
             return omniBone;
         }
 
-        public OmniBone AddOmniBone(string lightType, string lightColorR, string lightColorG, string lightColorB)
+        public OmniBone CreateOmniBone(string lightType, string lightColorR, string lightColorG, string lightColorB)
         {
-            OmniBone omniBone = AddOmniBone();
+            OmniBone omniBone = CreateOmniBone();
             omniBone.SetLightType(lightType);
             omniBone.SetLightColor(lightColorR, lightColorG, lightColorB);
             return omniBone;
         }
 
-        public Bone AddBone(string name, string numChilds, string id)
+        public Bone CreateBone(string name, string numChilds, string id)
         {
             Bone bone = new(name, numChilds, id);
             RealRoot.Add(bone.Element);

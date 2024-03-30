@@ -37,7 +37,7 @@ namespace DMCal3d.Net.Builders
             Document.Add(FakeRoot);
         }
 
-        public virtual void AddHeader(string magic, string version)
+        public virtual void CreateHeader(string magic, string version)
         {
             XElement header = new(HeaderName);
             header.SetAttributeValue(HeaderMagicAttributeName, magic.ToUpper());
@@ -45,7 +45,7 @@ namespace DMCal3d.Net.Builders
             FakeRoot.Add(header);
         }
 
-        public virtual void AddRealRoot(string rootName)
+        public virtual void CreateRealRoot(string rootName)
         {
             RealRoot = new(rootName, string.Empty);
             FakeRoot.Add(RealRoot);

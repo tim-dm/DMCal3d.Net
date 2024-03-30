@@ -12,8 +12,8 @@
 
         public AnimationBuilder(string serializedName = DefaultSerializedName) : base(serializedName)
         {
-            AddHeader(HeaderMagic, HeaderVersion);
-            AddRealRoot(RootName);
+            CreateHeader(HeaderMagic, HeaderVersion);
+            CreateRealRoot(RootName);
             RealRoot.SetAttributeValue(DurationAttributeName, DefaultDurationAttributeValue);
         }
 

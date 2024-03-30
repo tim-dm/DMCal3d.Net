@@ -11,8 +11,8 @@
 
         public MorphBuilder(string serializedName = DefaultSerializedName) : base(serializedName)
         {
-            AddHeader(HeaderMagic, HeaderVersion);
-            AddRealRoot(RootName);
+            CreateHeader(HeaderMagic, HeaderVersion);
+            CreateRealRoot(RootName);
         }
 
         public void SetNumTracks(string value)
