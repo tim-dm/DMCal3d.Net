@@ -27,7 +27,7 @@
             RealRoot.SetAttributeValue(NumTracksAttributeName, value);
         }
 
-        public AnimationTrack AddTrack()
+        public AnimationTrack CreateTrack()
         {
             AnimationTrack track = new();
             RealRoot.Add(track.Element);

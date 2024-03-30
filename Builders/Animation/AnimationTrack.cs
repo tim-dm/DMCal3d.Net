@@ -18,14 +18,14 @@
             SetAttribute(NumKeyFramesAttributeName, value);
         }
 
-        public AnimationKeyFrame AddKeyFrame(string time)
+        public AnimationKeyFrame CreateKeyFrame(string time)
         {
             AnimationKeyFrame keyframe = new(time);
             Element.Add(keyframe.Element);
             return keyframe;
         }
 
-        public AnimationKeyFrame AddKeyFrame()
+        public AnimationKeyFrame CreateKeyFrame()
         {
             AnimationKeyFrame keyframe = new();
             Element.Add(keyframe.Element);
