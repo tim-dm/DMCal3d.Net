@@ -19,10 +19,10 @@ namespace DMCal3d.Net.Documents
 
         public DocumentCasing Casing { get; set; } = DocumentCasing.Unknown;
 
-        public Cal3dDocument(string cal3dxml, string name = "")
+        public Cal3dDocument(string xml, string name = "")
         {
             Name = name;
-            TryParse(cal3dxml);
+            TryParse(xml);
             SetDocumentCasing();
         }
 

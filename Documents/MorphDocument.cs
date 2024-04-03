@@ -4,7 +4,7 @@ namespace DMCal3d.Net.Documents
 {
     public class MorphDocument : Cal3dDocument
     {
-        public MorphDocument(string cal3dAssetPath, string name = "morph.xpf") : base(cal3dAssetPath, name)
+        public MorphDocument(string xml, string name = "morph.xpf") : base(xml, name)
         {
         }
 
