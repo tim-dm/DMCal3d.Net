@@ -7,8 +7,8 @@ namespace DMCal3d.Net
         /// <summary>
         /// Converts an XDocument into a string, removing the fake root element added when parsing
         /// </summary>
-        /// <param name="document">XDocuemtn to convert</param>
-        /// <returns>A string representation of xml</returns>
+        /// <param name="document">XDocument to convert</param>
+        /// <returns>A string representation of the xml document</returns>
         public static string ConvertToString(this XDocument document)
         {
             return document.ToString().Replace("<fakeroot>", "")
