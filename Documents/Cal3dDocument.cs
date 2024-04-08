@@ -1,7 +1,11 @@
 ﻿using DMCal3d.Net.Enums;
 using DMCal3d.Net.Exceptions;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Text.Unicode;
 using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace DMCal3d.Net.Documents
 {
@@ -129,6 +133,16 @@ namespace DMCal3d.Net.Documents
         public XElement? GetElement(string name, bool matchCase = false)
         {
             return GetElements(name, matchCase).LastOrDefault();
+        }
+
+        public string Save()
+        {
+            return Document.ConvertToString();
+        }
+
+        internal class Utf8StringWriter : StringWriter
+        {
+            public override Encoding Encoding => Encoding.UTF8;
         }
     }
 }
