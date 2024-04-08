@@ -150,7 +150,7 @@ namespace DMCal3d.Net.Documents
             }
         }
 
-        public string Save()
+        public override string Save()
         {
             StringWriter writer = new Utf8StringWriter();
             Document.Save(writer, SaveOptions.None);

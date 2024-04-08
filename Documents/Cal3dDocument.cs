@@ -135,7 +135,7 @@ namespace DMCal3d.Net.Documents
             return GetElements(name, matchCase).LastOrDefault();
         }
 
-        public string Save()
+        public virtual string Save()
         {
             return Document.ConvertToString();
         }
