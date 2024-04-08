@@ -5,22 +5,23 @@ namespace DMCal3d.Net.Documents
     public class IndexDocument : Cal3dDocument
     {
         private const string MeshIndexTagName = "Index";
+        private const string TemplateTagName = "Template";
 
         public IndexDocument(string xml, string name = "index.xml") : base(xml, name) { }
 
         public List<XElement>? GetBodyParts()
         {
-            return Document.Element("Template")?.GetChildren("bodypart[0-9]+");
+            return Document.Element(TemplateTagName)?.GetChildren("bodypart[0-9]+");
         }
 
         public List<XElement>? GetBodyPartIds()
         {
-            return Document.Element("Template")?.GetChildren("bodypartid", true);
+            return Document.Element(TemplateTagName)?.GetChildren("bodypartid", true);
         }
 
         public List<XElement>? GetMeshes()
         {
-            return Document.Element("Template")?.GetChildren("mesh[0-9]+");
+            return Document.Element(TemplateTagName)?.GetChildren("mesh[0-9]+");
         }
 
         public List<XElement>? GetAssets(bool includeDuplicates = false)
@@ -73,7 +74,7 @@ namespace DMCal3d.Net.Documents
 
         public List<XElement>? GetActions()
         {
-            return Document.Element("Template")?.GetChildren("action([0-9].*|$)");
+            return Document.Element(TemplateTagName)?.GetChildren("action([0-9].*|$)");
         }
 
         public XElement? GetLastMesh()
@@ -141,7 +142,7 @@ namespace DMCal3d.Net.Documents
 
         public void SetParent(string pid)
         {
-            XElement dataImport = GetDataImport();
+            XElement? dataImport = GetDataImport();
 
             if(dataImport != null)
             {
