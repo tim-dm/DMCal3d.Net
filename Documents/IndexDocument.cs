@@ -148,5 +148,12 @@ namespace DMCal3d.Net.Documents
                 dataImport.Value = $"product://{pid}/index.xml";
             }
         }
+
+        public string Save()
+        {
+            StringWriter writer = new Utf8StringWriter();
+            Document.Save(writer, SaveOptions.None);
+            return writer.ToString();
+        }
     }
 }
