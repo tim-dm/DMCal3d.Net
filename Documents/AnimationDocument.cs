@@ -8,9 +8,31 @@ namespace DMCal3d.Net.Documents
         {
         }
 
+        public List<XElement> GetTracks()
+        {
+            return GetElements("track");
+        }
+
         public List<XElement> GetKeyFrames()
         {
             return GetElements("keyframe");
+        }
+
+        public List<string> GetTracksAttribute(string attributeName)
+        {
+            List<string> attributeValues = [];
+            
+            GetTracks().ForEach(track =>
+            {
+                XAttribute boneId = track.GetAttribute(attributeName, true);
+
+                if (boneId != null && !string.IsNullOrEmpty(boneId.Value))
+                {
+                    attributeValues.Add(boneId.Value);
+                }
+            });
+
+            return attributeValues;
         }
     }
 }
