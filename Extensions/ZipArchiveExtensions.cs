@@ -32,6 +32,9 @@ public static class ZipArchiveExtensions
     /// <param name="entryContent"></param>
     public static void AddFromString(this ZipArchive archive, string entryName, string entryContent)
     {
+        ZipArchiveEntry? existingEntry = archive.GetEntry(entryName);
+        existingEntry?.Delete();
+
         ZipArchiveEntry newEntry = archive.CreateEntry(entryName);
 
         using (StreamWriter writer = new(newEntry.Open()))
