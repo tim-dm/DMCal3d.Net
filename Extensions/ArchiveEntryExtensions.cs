@@ -41,20 +41,36 @@ public static class ArchiveEntryExtensions
 
     public static void ExtractToString(this ZipArchiveEntry entry, out string text)
     {
+        string buffer = "";
+
         using (Stream stream = entry.Open())
         {
             using (StreamReader reader = new(stream))
             {
-                text = reader.ReadToEnd();
+                buffer = reader.ReadToEnd();
             }
+
+            stream.Flush();
         }
+
+        text = buffer;
     }
 
-    public static void AddFromString(this ZipArchiveEntry entry, string entryContent)
+    public static void Append(this ZipArchiveEntry entry, string entryContent, bool append)
     {
-        using (StreamWriter writer = new(entry.Open()))
+        using (Stream s = entry.Open())
         {
-            writer.Write(entryContent);
-        }
+            using (StreamWriter writer = new(s))
+            {
+                if (append)
+                {
+                    long endPoint = s.Length;
+                    s.Seek(endPoint, SeekOrigin.Begin);
+                }
+
+                writer.Write(entryContent);
+                writer.Flush();
+            }
+        }        
     }
 }
