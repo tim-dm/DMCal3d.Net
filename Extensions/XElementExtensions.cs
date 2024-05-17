@@ -50,8 +50,10 @@ namespace DMCal3d.Net
             StringComparison comparison = StringComparison.InvariantCultureIgnoreCase;
 
             if (matchWholeWord)
+            {
                 return element.Attributes().FirstOrDefault(x => x.Name.LocalName.Equals(attributeName, comparison));
-            
+            }
+
             return element.Attributes().FirstOrDefault(x => x.Name.LocalName.IndexOf(attributeName, comparison) != -1);
         }     
         
@@ -362,6 +364,32 @@ namespace DMCal3d.Net
 
             matchedBoneType = "";
             return false;
+        }
+
+        public static List<XElement> Sort(this List<XElement> elements, bool reverse = true)
+        {
+            List<XElement> sortedElements = [];
+            
+            if (reverse)
+            {
+                sortedElements = [.. elements.OrderByDescending(e => e.Name.ToString())];
+            }
+            else
+            {
+                sortedElements = [.. elements.OrderBy(e => e.Name.ToString())];
+            }
+            
+            return sortedElements;
+        }
+
+        public static void UpdateElements(this List<XElement> elements, XElement referenceElement)
+        {
+            elements.Remove();
+
+            foreach (XElement element in elements)
+            {
+                referenceElement.AddAfterSelf(element);
+            }
         }
     }
 }
