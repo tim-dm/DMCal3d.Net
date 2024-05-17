@@ -49,4 +49,12 @@ public static class ArchiveEntryExtensions
             }
         }
     }
+
+    public static void AddFromString(this ZipArchiveEntry entry, string entryContent)
+    {
+        using (StreamWriter writer = new(entry.Open()))
+        {
+            writer.Write(entryContent);
+        }
+    }
 }
