@@ -49,8 +49,6 @@ public static class ArchiveEntryExtensions
             {
                 buffer = reader.ReadToEnd();
             }
-
-            stream.Flush();
         }
 
         text = buffer;
